@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [SYMBOLS] = LAYOUT(
   //--------------------------------------------------       -------------------------------------------------
-    KC_ESC,     DE_AT,    DE_HASH,  KC_DLR,   DE_PERC,       DE_CIRC,  DE_AMPR,  DE_ASTR,  DE_SCLN,  KC_LONG_L5,
+    KC_ESC,     DE_AT,    DE_HASH,  KC_DLR,   DE_PERC,       DE_CIRC,  DE_AMPR,  DE_ASTR,  DE_MINS,  KC_LONG_L5,
   //--------------------------------------------------       -------------------------------------------------
     KC_TAB,     DE_EQL,   DE_TILD,  DE_QUOT,  DE_SLSH,       DE_BSLS,  DE_LCBR,  DE_RCBR,  KC_PIPE,  KC_BSPC,
   //--------------------------------------------------       -------------------------------------------------
