@@ -94,6 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   static uint16_t fnx_layer_timer;
+  static bool a_pressed = false, o_pressed = false, u_pressed = false, s_pressed = false;;
 
   switch (keycode) {
     /* Layer mod-tab */
@@ -159,44 +160,60 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KC_A_AE:
       if (record->event.pressed) {
         fnx_layer_timer = timer_read();
+        a_pressed = true;
       } else {
-		    if (timer_elapsed(fnx_layer_timer) < TAPPING_TERM)
-		      tap_code(DE_A);
-        else
-          tap_code(DE_ADIA);
+        if (a_pressed) {
+		      if (timer_elapsed(fnx_layer_timer) < TAPPING_TERM)
+		        tap_code(DE_A);
+          else
+            tap_code(DE_ADIA);
+          a_pressed = false;
+        }
       }
       return false; // Skip all further processing of this 
 
     case KC_O_OE:
       if (record->event.pressed) {
         fnx_layer_timer = timer_read();
+        o_pressed = true;
       } else {
-		    if (timer_elapsed(fnx_layer_timer) < TAPPING_TERM)
-		      tap_code(DE_O);
-        else
-          tap_code(DE_ODIA);
+        if (o_pressed) {
+  		    if (timer_elapsed(fnx_layer_timer) < TAPPING_TERM)
+	  	      tap_code(DE_O);
+          else
+            tap_code(DE_ODIA);
+          o_pressed = false;
+        }
       }
       return false; // Skip all further processing of this 
 
     case KC_U_UE:
       if (record->event.pressed) {
         fnx_layer_timer = timer_read();
+        u_pressed = true;
       } else {
-		    if (timer_elapsed(fnx_layer_timer) < TAPPING_TERM)
-		      tap_code(DE_U);
-        else
-          tap_code(DE_UDIA);
+        if (u_pressed) {
+  		    if (timer_elapsed(fnx_layer_timer) < TAPPING_TERM)
+	  	      tap_code(DE_U);
+          else
+            tap_code(DE_UDIA);
+          u_pressed = false;
+        }
       }
       return false; // Skip all further processing of this 
 
     case KC_S_SS:
       if (record->event.pressed) {
         fnx_layer_timer = timer_read();
+        s_pressed = true;
       } else {
-		    if (timer_elapsed(fnx_layer_timer) < TAPPING_TERM)
-		      tap_code(DE_S);
-        else
-          tap_code(DE_SS);
+        if (s_pressed) {
+  		    if (timer_elapsed(fnx_layer_timer) < TAPPING_TERM)
+	  	      tap_code(DE_S);
+          else
+            tap_code(DE_SS);
+          s_pressed = false;
+        }
       }
       return false; // Skip all further processing of this 
 
@@ -268,6 +285,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false; // Skip all further processing of this 
 
     default:
+      if (a_pressed) {
+        tap_code(DE_A);
+        a_pressed = false;
+      }
+      if (o_pressed) {
+        tap_code(DE_O);
+        o_pressed = false;
+      }
+      if (u_pressed) {
+        tap_code(DE_U);
+        u_pressed = false;
+      }
+      if (s_pressed) {
+        tap_code(DE_S);
+        s_pressed = false;
+     }
       return true; // Process all other keycodes normally
   }
 }
