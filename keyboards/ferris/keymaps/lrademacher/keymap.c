@@ -14,6 +14,7 @@ enum my_keycodes {
   KC_LALT_L2,
   KC_LALT_L3,
   KC_LONG_L5,
+  KC_LONG_RESET,
 
   /* Umlaute */
   KC_A_AE,
@@ -51,19 +52,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //--------------------------------------------------       -------------------------------------------------
     TO(NUM_MSE),DE_EURO,  DE_LABK,  DE_RABK,  DE_DQUO,       DE_LBRC,  DE_LPRN,  DE_RPRN,  DE_RBRC,  KC_ENT,
   //--------------------------------------------------       -------------------------------------------------
-		    					 KC_LCTL_L1, MT(MOD_LGUI, KC_SPACE),       KC_LSFT,  KC_LALT_L3 
+                   KC_LCTL_L1, MT(MOD_LGUI, KC_SPACE),       KC_LSFT,  KC_LALT_L3 
   //--------------------------------------------------       -------------------------------------------------
   ),
 
   [NAV_HOT] = LAYOUT(
   //--------------------------------------------------       -------------------------------------------------
-    KC_ESC,     KC_F1,    KC_F2,    KC_F3,    KC_F4,         KC_PAUSE, KC_PGDN,  KC_UP,    KC_PGUP,  RESET,
+    KC_ESC,     KC_F1,    KC_F2,    KC_F3,    KC_F4,         KC_PAUSE, KC_PGUP,  KC_UP,    KC_PGDN,  KC_LONG_RESET,
   //--------------------------------------------------       -------------------------------------------------
     KC_TAB,     KC_F5,    KC_F6,    KC_F7,    KC_F8,         KC_PSCR,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_BSPC,
   //--------------------------------------------------       -------------------------------------------------
     TO(NUM_MSE),KC_F9,    KC_F10,   KC_F11,   KC_F12,        KC_DEL,   KC_HOME,  KC_INS,   KC_END,   KC_ENT,
   //--------------------------------------------------       -------------------------------------------------
-		    					 KC_LCTL_L1, MT(MOD_LGUI, KC_SPACE),       KC_LSFT,  KC_LALT_L3 
+                   KC_LCTL_L1, MT(MOD_LGUI, KC_SPACE),       KC_LSFT,  KC_LALT_L2
   ),
 
   [NUM_MSE] = LAYOUT(
@@ -74,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //--------------------------------------------------       -----------------------------------------------------
     TO(NAV_HOT),KC_WH_D,  KC_BTN3,  KC_WH_U,  KC_MUTE,       KC_0_EQL, KC_1,     KC_2,     KC_3,     KC_ENT,
   //--------------------------------------------------       -----------------------------------------------------
-		    					 KC_LCTL_L1, MT(MOD_LGUI, KC_SPACE),       KC_LSFT,  KC_LALT_L2 
+                   KC_LCTL_L1, MT(MOD_LGUI, KC_SPACE),       KC_LSFT,  KC_LALT_L2 
   //--------------------------------------------------       -----------------------------------------------------
   ),
 
@@ -145,6 +146,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		      layer_move(NAV_HOT);
       }
       return false; // Skip all further processing of this key
+   
+    case KC_LONG_RESET:
+      if (record->event.pressed) {
+        fnx_layer_timer = timer_read();
+      } else {
+
+		    if (timer_elapsed(fnx_layer_timer) > TAPPING_TERM)
+		      reset_keyboard();
+      }
+      return false; // Skip all further processing of this key
+
 
     case KC_LONG_L5:
       if (record->event.pressed) {
