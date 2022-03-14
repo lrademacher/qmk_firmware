@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [SYM] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______,  KC_INS, KC_PGUP,   KC_UP, KC_PGDN, KC_PAUS,                      DE_EXLM, DE_QUES, DE_HASH, DE_CIRC, DE_PERC, DE_TILD,
+      MO(NUM),  KC_INS, KC_PGUP,   KC_UP, KC_PGDN, KC_PAUS,                      DE_EXLM, DE_QUES, DE_HASH, DE_CIRC, DE_PERC, DE_TILD,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END,                      DE_QUOT, DE_LPRN, DE_RPRN, DE_LBRC, DE_RBRC, DE_DQUO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
