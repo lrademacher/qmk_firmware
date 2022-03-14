@@ -41,13 +41,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [SYM] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      MO(NUM),  KC_INS, KC_PGUP,   KC_UP, KC_PGDN, KC_PAUS,                      DE_EXLM, DE_QUES, DE_HASH, DE_CIRC, DE_PERC, DE_TILD,
+      MO(NUM),  KC_INS, KC_PGUP,   KC_UP, KC_PGDN, KC_PAUS,                      DE_EXLM, DE_QUES, DE_AMPR, DE_CIRC, DE_PERC, DE_TILD,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END,                      DE_QUOT, DE_LPRN, DE_RPRN, DE_LBRC, DE_RBRC, DE_DQUO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, DE_ADIA, DE_ODIA, DE_UDIA,   DE_SS, KC_PSCR,                      DE_AMPR, DE_LCBR, DE_RCBR, DE_SLSH, DE_BSLS, DE_LABK,
+      _______, DE_ADIA, DE_ODIA, DE_UDIA,   DE_SS, KC_PSCR,                      DE_LABK, DE_LCBR, DE_RCBR, DE_SLSH, DE_BSLS, DE_TILD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    _______, TT(MSC), _______
+                                          _______, _______, _______,    KC_RSFT, TT(MSC), _______
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX,                      KC_ACL0, KC_BTN1, XXXXXXX, KC_VOLD, KC_MPRV, XXXXXXX, 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_BTN3, XXXXXXX, KC_MUTE, KC_MNXT, XXXXXXX,  
+      XXXXXXX, XXXXXXX, XXXXXXX, DE_SUP2, DE_SUP3, DE_MICR,                      DE_SECT, KC_BTN3, XXXXXXX, KC_MUTE, KC_MNXT, XXXXXXX,  
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, _______, XXXXXXX,    XXXXXXX, _______, XXXXXXX
                                       //`--------------------------'  `--------------------------'
