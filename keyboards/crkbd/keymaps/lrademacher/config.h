@@ -33,8 +33,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define TAPPING_FORCE_HOLD
 //#define TAPPING_TERM 100
 
-#undef TAPPING_TOGGLE
-#define TAPPING_TOGGLE 2
+//#undef TAPPING_TOGGLE
+//#define TAPPING_TOGGLE 2
 
 #undef MOUSEKEY_DELAY
 #define MOUSEKEY_DELAY 5
