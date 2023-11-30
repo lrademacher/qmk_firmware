@@ -56,5 +56,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef MOUSEKEY_WHEEL_MAX_SPEED
 #define MOUSEKEY_WHEEL_MAX_SPEED 8
 
+#define OLED_DISABLE_TIMEOUT
 
-#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+
+// #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
