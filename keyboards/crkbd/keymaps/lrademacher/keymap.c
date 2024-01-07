@@ -90,7 +90,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 }
 
 #ifndef ANIM_FRAME_TIME
-  #define ANIM_FRAME_TIME 150
+  #define ANIM_FRAME_TIME 50
 #endif
 
  static const char mb_logo[] = {
