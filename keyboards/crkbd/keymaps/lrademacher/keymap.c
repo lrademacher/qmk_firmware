@@ -24,6 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SYM 1 // Symbols and navigation
 #define NUM 2 // numbers and function keys
 #define MSC 3 // mouse and media
+#define RGB 4 // mouse and media
 
 #define WD_LEFT LCTL(KC_LEFT)
 #define WD_RGHT LCTL(KC_RGHT)
@@ -68,11 +69,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [MSC] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        RESET, XXXXXXX, KC_WH_U, KC_MS_U, KC_WH_D, XXXXXXX,                      XXXXXXX, KC_BTN2, XXXXXXX, KC_VOLU, KC_MPLY,  KC_DEL, 
+        RESET, MO(RGB), KC_WH_U, KC_MS_U, KC_WH_D, XXXXXXX,                      XXXXXXX, KC_BTN2, XXXXXXX, KC_VOLU, KC_MPLY,  KC_DEL, 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, WD_LEFT, KC_MS_L, KC_MS_D, KC_MS_R, WD_RGHT,                      KC_ACL0, KC_BTN1, XXXXXXX, KC_VOLD, KC_MPRV, XXXXXXX, 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, XXXXXXX, XXXXXXX, DE_SUP2, DE_SUP3, DE_MICR,                      DE_SECT, KC_BTN3, XXXXXXX, KC_MUTE, KC_MNXT, XXXXXXX,  
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          XXXXXXX, _______, XXXXXXX,    XXXXXXX, _______, XXXXXXX
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [RGB] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, XXXXXXX, 
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD, XXXXXXX, 
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     RGB_RMOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, _______, XXXXXXX,    XXXXXXX, _______, XXXXXXX
                                       //`--------------------------'  `--------------------------'
