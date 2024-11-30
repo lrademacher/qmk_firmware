@@ -58,12 +58,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define OLED_DISABLE_TIMEOUT
 
-#define RGBLIGHT_LIMIT_VAL (255)
-#define RGBLIGHT_HUE_STEP (4)
-#define RGBLIGHT_ANIMATIONS
-#define RGB_DISABLE_WHEN_USB_SUSPENDED 1
-
-#define RGBLIGHT_SPLIT
-#define RGBLIGHT_SLEEP
-
 // #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
