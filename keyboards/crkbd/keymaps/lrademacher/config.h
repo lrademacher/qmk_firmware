@@ -58,4 +58,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define OLED_DISABLE_TIMEOUT
 
+#define DEBOUNCE 20
+
 // #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
